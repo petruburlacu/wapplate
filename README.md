@@ -3,7 +3,8 @@ This project is designed to help developers save time at the initial stage of an
 
 ### Back-end
 - NodeJs
-- ExpressJs
+- Phyton
+- Java
 
 ### Front-end
 - Angular
