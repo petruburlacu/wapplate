@@ -1,37 +1,39 @@
 version: 2
 jobs:
-        # The test job
-        test:
-            working_directory: ~/wapplate/client
-            docker:
-                - image: circleci/node:10-browsers
-            steps:
-                # Checkout the code from the branch into the working_directory
-                - checkout
-                # Log the current branch
-                - run:
-                    name: Show current branch
-                    command: echo ${CIRCLE_BRANCH}
-                # Change directory
-                - run:
-                    name: Client directory
-                    command: cd client
-                # Restore local dependencies from cache
-                - restore_cache:
-                    keys:
-                    - v1-dependencies-{{ checksum "package-lock.json" }}
-                    - v1-dependencies-
-                # Install project dependencies
-                - run:
-                    name: Install local dependencies
-                    command: npm install
-                # Cache local dependencies if they don't exist
-                - save_cache:
-                    key: v1-dependencies-{{ checksum "package-lock.json" }}
-                    paths:
-                        - node_modules
-
-                # Test the source code
-                - run:
-                    name: Testing
-                    command: npm test
+    build:
+        working_directory: ~/wapplate/client
+        docker:
+            - image: circleci/node:10-browsers
+        steps:
+            # Checkout the code from the branch into the working_directory
+            - checkout
+            # Log the current branch
+            - run:
+                name: Show current branch
+                command: echo ${CIRCLE_BRANCH}
+            # Change directory
+            - run:
+                name: Client directory
+                command: cd client
+            # Restore local dependencies from cache
+            - restore_cache:
+                keys:
+                - v1-dependencies-{{ checksum "package-lock.json" }}
+                - v1-dependencies-
+            # Install project dependencies
+            - run:
+                name: Install local dependencies
+                command: npm install
+            # Cache local dependencies if they don't exist
+            - save_cache:
+                key: v1-dependencies-{{ checksum "package-lock.json" }}
+                paths:
+                    - node_modules
+            # Build project
+            - run: 
+                name: Building
+                command: npm build
+            # Test the source code
+            - run:
+                name: Testing
+                command: npm test
