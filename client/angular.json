@@ -38,7 +38,7 @@
                             "src/styles.scss"
                         ],
                         "scripts": [
-                            "src/assets/libs/pace/pace.js"
+                            "src/assets/libs/pace/pace.min.js"
                         ]
                     },
                     "configurations": {
