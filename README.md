@@ -9,3 +9,8 @@ This project is designed to help developers save time at the initial stage of an
 ### Front-end
 - Angular
 - Ant Design | NgZorro
+
+
+Resources: 
+https://dragonprogrammer.com/securing-angular-auth0/
+https://michalsnik.github.io/aos/
