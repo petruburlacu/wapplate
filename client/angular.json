@@ -33,8 +33,9 @@
                             }
                         ],
                         "styles": [
-                            "src/assets/styles/theme.less",
                             "src/assets/libs/pace/pace.less",
+                            "src/assets/styles/utility.less",
+                            "src/assets/styles/theme.less",
                             "src/styles.less"
                         ],
                         "scripts": [

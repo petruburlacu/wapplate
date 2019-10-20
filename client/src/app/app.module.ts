@@ -15,11 +15,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormAuthComponent } from './shared/components/form-auth/form-auth.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RestrictedComponent } from './pages/restricted/restricted.component';
+import { ThemeComponent } from './pages/theme/theme.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormAuthComponent
+    FormAuthComponent,
+    LoginComponent,
+    RestrictedComponent,
+    ThemeComponent
   ],
   imports: [
     BrowserModule,
